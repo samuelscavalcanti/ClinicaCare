@@ -3,14 +3,20 @@ import { Input } from '../components/Input';
 import { Button } from '../components/Button';
 import '../styles/auth.css';
 
-export function Login({ onNavigateRegister, onNavigateHome }) {
+export function Login({ onNavigateRegister, onNavigateHome, onLoginSuccess }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('Dados de login enviados:', { email, password });
-    alert('Login enviado! (A integração com o Dashboard do seu colega acontecerá aqui)');
+    const user = email.trim().toLowerCase();
+    if (user === 'medico' && password === '123') {
+      onLoginSuccess('dashMedico');
+    } else if (user === 'paciente' && password === '123') {
+      onLoginSuccess('dashPaciente');
+    } else {
+      alert('Credenciais inválidas. Tente medico/123 ou paciente/123');
+    }
   };
 
   return (
@@ -27,10 +33,10 @@ export function Login({ onNavigateRegister, onNavigateHome }) {
 
         <form className="auth-form" onSubmit={handleSubmit}>
           <Input
-            label="Endereço de E-mail"
+            label="Usuário (medico ou paciente)"
             id="email"
-            type="email"
-            placeholder="seu-nome@clinicacare.com"
+            type="text"
+            placeholder="Digite 'medico' ou 'paciente'"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
