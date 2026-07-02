@@ -228,6 +228,7 @@ Em outro terminal:
 ```bash
 cd frontend
 npm install
+npm install react-icons
 npm run dev
 ```
 O frontend ficará disponível em `http://localhost:5173` (porta padrão do Vite).
