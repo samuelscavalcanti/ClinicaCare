@@ -197,7 +197,7 @@ O banco de dados é acessado via **MongoDB/Mongoose**, com duas entidades princi
 
 ### 1. Clonar o repositório
 ```bash
-git clone <url-do-repositorio>
+git clone <https://github.com/samuelscavalcanti/ClinicaCare>
 cd ClinicaCare-main
 ```
 
