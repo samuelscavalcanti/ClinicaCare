@@ -1,0 +1,19 @@
+// Shared list of medical specialties, used both when a doctor registers
+// (choosing their specialty from a list instead of typing it) and when a
+// patient is scheduling a new appointment (filtering doctors by specialty).
+export const SPECIALTIES = [
+  'Clínica Geral',
+  'Cardiologia',
+  'Pediatria',
+  'Dermatologia',
+  'Ginecologia',
+  'Nutrição',
+  'Ortopedia',
+  'Psiquiatria',
+  'Oftalmologia',
+  'Neurologia',
+  'Endocrinologia',
+  'Urologia',
+  'Otorrinolaringologia',
+  'Psicologia'
+];
